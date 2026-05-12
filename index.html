@@ -84,20 +84,24 @@
             animation: pulse-soft 3s infinite;
         }
 
-        .marquee-content {
+        .animate-marquee-infinite {
             display: flex;
-            gap: 2rem;
-            animation: scroll 60s linear infinite;
+            width: max-content;
+            animation: scroll-infinite 40s linear infinite;
         }
 
-        @keyframes scroll {
-            from {
+        @keyframes scroll-infinite {
+            0% {
                 transform: translateX(0);
             }
 
-            to {
-                transform: translateX(-100%);
+            100% {
+                transform: translateX(-50%);
             }
+        }
+
+        .animate-marquee-infinite:hover {
+            animation-play-state: paused;
         }
     </style>
 </head>
@@ -261,80 +265,201 @@
         </div>
     </section>
 
-    <section id="depoimentos" class="py-32 bg-white">
-        <div class="max-w-6xl mx-auto px-8 md:px-16">
-            <div class="text-center mb-20 reveal">
-                <span class="text-[10px] uppercase tracking-[0.4em] opacity-50 mb-4 block">Testemunhos</span>
-                <h2 class="text-4xl font-serif">Relatos de Jornada</h2>
-            </div>
+    <section id="depoimentos" class="py-32 bg-white overflow-hidden">
+        <div class="text-center mb-16 reveal">
+            <span class="text-[10px] uppercase tracking-[0.4em] opacity-50 mb-4 block">Testemunhos</span>
+            <h2 class="text-4xl font-serif">Relatos de Jornada</h2>
+        </div>
 
-            <!-- Grid de Depoimentos (Inspirado no Shadcn/Tailark) -->
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Card 1 -->
-                <div class="bg-[#F9F7F2] rounded-3xl border border-black/5 p-8 transition-all hover:shadow-xl reveal">
-                    <div class="flex gap-1 mb-6">
-                        <i data-lucide="star" class="w-4 h-4 fill-[#8A9A5B] stroke-[#8A9A5B]"></i>
-                        <i data-lucide="star" class="w-4 h-4 fill-[#8A9A5B] stroke-[#8A9A5B]"></i>
-                        <i data-lucide="star" class="w-4 h-4 fill-[#8A9A5B] stroke-[#8A9A5B]"></i>
-                        <i data-lucide="star" class="w-4 h-4 fill-[#8A9A5B] stroke-[#8A9A5B]"></i>
-                        <i data-lucide="star" class="w-4 h-4 fill-[#8A9A5B] stroke-[#8A9A5B]"></i>
-                    </div>
-                    <p class="text-gray-600 font-light leading-relaxed mb-8">
-                        "Utilizar o acompanhamento da Dra. Helena foi como desbloquear um novo nível de clareza mental. A fusão entre empatia e técnica é impecável."
-                    </p>
-                    <div class="flex items-center gap-3 mt-auto">
-                        <div class="w-10 h-10 rounded-full overflow-hidden border border-black/10 shadow-sm">
-                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=100" alt="Méschac Irung" class="w-full h-full object-cover">
+        <!-- Container do Carrossel Infinito -->
+        <div class="relative flex overflow-x-hidden py-10">
+            <div class="flex animate-marquee-infinite whitespace-nowrap gap-6">
+                <!-- Conjunto Original de 4 Cards -->
+                <div class="flex gap-6">
+                    <!-- Card 1 -->
+                    <div class="w-[400px] bg-[#F9F7F2] rounded-3xl border border-black/5 p-8 flex flex-col whitespace-normal">
+                        <div class="flex gap-1 mb-6">
+                            <i data-lucide="Star" class="w-4 h-4 fill-[#8A9A5B] stroke-[#8A9A5B]"></i>
+                            <i data-lucide="Star" class="w-4 h-4 fill-[#8A9A5B] stroke-[#8A9A5B]"></i>
+                            <i data-lucide="Star" class="w-4 h-4 fill-[#8A9A5B] stroke-[#8A9A5B]"></i>
+                            <i data-lucide="Star" class="w-4 h-4 fill-[#8A9A5B] stroke-[#8A9A5B]"></i>
+                            <i data-lucide="Star" class="w-4 h-4 fill-[#8A9A5B] stroke-[#8A9A5B]"></i>
                         </div>
-                        <div>
-                            <div class="text-sm font-semibold">Méschac Irung</div>
-                            <div class="text-[10px] uppercase tracking-widest opacity-50">Empresário</div>
+                        <p class="text-gray-600 font-light leading-relaxed mb-8">
+                            "Utilizar o acompanhamento da Dra. Helena foi como desbloquear um novo nível de clareza mental. A fusão entre empatia e técnica é impecável."
+                        </p>
+                        <div class="flex items-center gap-3 mt-auto">
+                            <div class="w-10 h-10 rounded-full overflow-hidden border border-black/10 shadow-sm">
+                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=100" alt="Méschac Irung" class="w-full h-full object-cover">
+                            </div>
+                            <div>
+                                <div class="text-sm font-semibold">Méschac Irung</div>
+                                <div class="text-[10px] uppercase tracking-widest opacity-50">Empresário</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 2 -->
+                    <div class="w-[400px] bg-[#F9F7F2] rounded-3xl border border-black/5 p-8 flex flex-col whitespace-normal">
+                        <div class="flex gap-1 mb-6">
+                            <i data-lucide="Star" class="w-4 h-4 fill-[#8A9A5B] stroke-[#8A9A5B]"></i>
+                            <i data-lucide="Star" class="w-4 h-4 fill-[#8A9A5B] stroke-[#8A9A5B]"></i>
+                            <i data-lucide="Star" class="w-4 h-4 fill-[#8A9A5B] stroke-[#8A9A5B]"></i>
+                            <i data-lucide="Star" class="w-4 h-4 fill-[#8A9A5B] stroke-[#8A9A5B]"></i>
+                            <i data-lucide="Star" class="w-4 h-4 fill-black/10 stroke-transparent"></i>
+                        </div>
+                        <p class="text-gray-600 font-light leading-relaxed mb-8">
+                            "A terapia transformou minha forma de lidar com desafios profissionais. A flexibilidade do atendimento online facilitou muito minha rotina."
+                        </p>
+                        <div class="flex items-center gap-3 mt-auto">
+                            <div class="w-10 h-10 rounded-full overflow-hidden border border-black/10 shadow-sm">
+                                <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=100" alt="Théo Balick" class="w-full h-full object-cover">
+                            </div>
+                            <div>
+                                <div class="text-sm font-semibold">Théo Balick</div>
+                                <div class="text-[10px] uppercase tracking-widest opacity-50">Desenvolvedor</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="w-[400px] bg-[#F9F7F2] rounded-3xl border border-black/5 p-8 flex flex-col whitespace-normal">
+                        <div class="flex gap-1 mb-6">
+                            <i data-lucide="Star" class="w-4 h-4 fill-[#8A9A5B] stroke-[#8A9A5B]"></i>
+                            <i data-lucide="Star" class="w-4 h-4 fill-[#8A9A5B] stroke-[#8A9A5B]"></i>
+                            <i data-lucide="Star" class="w-4 h-4 fill-[#8A9A5B] stroke-[#8A9A5B]"></i>
+                            <i data-lucide="Star" class="w-4 h-4 fill-[#8A9A5B] stroke-[#8A9A5B]"></i>
+                            <i data-lucide="Star" class="w-4 h-4 fill-[#8A9A5B] stroke-[#8A9A5B]"></i>
+                        </div>
+                        <p class="text-gray-600 font-light leading-relaxed mb-8">
+                            "A profundidade e o cuidado em cada sessão superaram todas as minhas expectativas. Recomendo para quem busca autoconhecimento real."
+                        </p>
+                        <div class="flex items-center gap-3 mt-auto">
+                            <div class="w-10 h-10 rounded-full overflow-hidden border border-black/10 shadow-sm">
+                                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=100" alt="Glodie Lukose" class="w-full h-full object-cover">
+                            </div>
+                            <div>
+                                <div class="text-sm font-semibold">Glodie Lukose</div>
+                                <div class="text-[10px] uppercase tracking-widest opacity-50">Designer</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div class="w-[400px] bg-[#F9F7F2] rounded-3xl border border-black/5 p-8 flex flex-col whitespace-normal">
+                        <div class="flex gap-1 mb-6">
+                            <i data-lucide="Star" class="w-4 h-4 fill-[#8A9A5B] stroke-[#8A9A5B]"></i>
+                            <i data-lucide="Star" class="w-4 h-4 fill-[#8A9A5B] stroke-[#8A9A5B]"></i>
+                            <i data-lucide="Star" class="w-4 h-4 fill-[#8A9A5B] stroke-[#8A9A5B]"></i>
+                            <i data-lucide="Star" class="w-4 h-4 fill-[#8A9A5B] stroke-[#8A9A5B]"></i>
+                            <i data-lucide="Star" class="w-4 h-4 fill-[#8A9A5B] stroke-[#8A9A5B]"></i>
+                        </div>
+                        <p class="text-gray-600 font-light leading-relaxed mb-8">
+                            "O acolhimento foi fundamental para que eu pudesse enfrentar meus medos mais profundos com serenidade e ética. Sou muito grata."
+                        </p>
+                        <div class="flex items-center gap-3 mt-auto">
+                            <div class="w-10 h-10 rounded-full overflow-hidden border border-black/10 shadow-sm">
+                                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=100" alt="Juliana Silva" class="w-full h-full object-cover">
+                            </div>
+                            <div>
+                                <div class="text-sm font-semibold">Juliana Silva</div>
+                                <div class="text-[10px] uppercase tracking-widest opacity-50">Advogada</div>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Card 2 -->
-                <div class="bg-[#F9F7F2] rounded-3xl border border-black/5 p-8 transition-all hover:shadow-xl reveal" style="transition-delay: 200ms;">
-                    <div class="flex gap-1 mb-6">
-                        <i data-lucide="star" class="w-4 h-4 fill-[#8A9A5B] stroke-[#8A9A5B]"></i>
-                        <i data-lucide="star" class="w-4 h-4 fill-[#8A9A5B] stroke-[#8A9A5B]"></i>
-                        <i data-lucide="star" class="w-4 h-4 fill-[#8A9A5B] stroke-[#8A9A5B]"></i>
-                        <i data-lucide="star" class="w-4 h-4 fill-[#8A9A5B] stroke-[#8A9A5B]"></i>
-                        <i data-lucide="star" class="w-4 h-4 fill-black/10 stroke-transparent"></i>
-                    </div>
-                    <p class="text-gray-600 font-light leading-relaxed mb-8">
-                        "A terapia transformou minha forma de lidar com desafios profissionais. A flexibilidade do atendimento online facilitou muito minha rotina."
-                    </p>
-                    <div class="flex items-center gap-3 mt-auto">
-                        <div class="w-10 h-10 rounded-full overflow-hidden border border-black/10 shadow-sm">
-                            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=100" alt="Théo Balick" class="w-full h-full object-cover">
+                <!-- Duplicação exata dos cards para loop infinito -->
+                <div class="flex gap-6" aria-hidden="true">
+                    <!-- Card 1 -->
+                    <div class="w-[400px] bg-[#F9F7F2] rounded-3xl border border-black/5 p-8 flex flex-col whitespace-normal">
+                        <div class="flex gap-1 mb-6">
+                            <i data-lucide="Star" class="w-4 h-4 fill-[#8A9A5B] stroke-[#8A9A5B]"></i>
+                            <i data-lucide="Star" class="w-4 h-4 fill-[#8A9A5B] stroke-[#8A9A5B]"></i>
+                            <i data-lucide="Star" class="w-4 h-4 fill-[#8A9A5B] stroke-[#8A9A5B]"></i>
+                            <i data-lucide="Star" class="w-4 h-4 fill-[#8A9A5B] stroke-[#8A9A5B]"></i>
+                            <i data-lucide="Star" class="w-4 h-4 fill-[#8A9A5B] stroke-[#8A9A5B]"></i>
                         </div>
-                        <div>
-                            <div class="text-sm font-semibold">Théo Balick</div>
-                            <div class="text-[10px] uppercase tracking-widest opacity-50">Desenvolvedor</div>
+                        <p class="text-gray-600 font-light leading-relaxed mb-8">
+                            "Utilizar o acompanhamento da Dra. Helena foi como desbloquear um novo nível de clareza mental. A fusão entre empatia e técnica é impecável."
+                        </p>
+                        <div class="flex items-center gap-3 mt-auto">
+                            <div class="w-10 h-10 rounded-full overflow-hidden border border-black/10 shadow-sm">
+                                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=100" alt="Méschac Irung" class="w-full h-full object-cover">
+                            </div>
+                            <div>
+                                <div class="text-sm font-semibold">Méschac Irung</div>
+                                <div class="text-[10px] uppercase tracking-widest opacity-50">Empresário</div>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Card 3 -->
-                <div class="bg-[#F9F7F2] rounded-3xl border border-black/5 p-8 transition-all hover:shadow-xl reveal" style="transition-delay: 400ms;">
-                    <div class="flex gap-1 mb-6">
-                        <i data-lucide="star" class="w-4 h-4 fill-[#8A9A5B] stroke-[#8A9A5B]"></i>
-                        <i data-lucide="star" class="w-4 h-4 fill-[#8A9A5B] stroke-[#8A9A5B]"></i>
-                        <i data-lucide="star" class="w-4 h-4 fill-[#8A9A5B] stroke-[#8A9A5B]"></i>
-                        <i data-lucide="star" class="w-4 h-4 fill-[#8A9A5B] stroke-[#8A9A5B]"></i>
-                        <i data-lucide="star" class="w-4 h-4 fill-[#8A9A5B] stroke-[#8A9A5B]"></i>
-                    </div>
-                    <p class="text-gray-600 font-light leading-relaxed mb-8">
-                        "A profundidade e o cuidado em cada sessão superaram todas as minhas expectativas. Recomendo para quem busca autoconhecimento real."
-                    </p>
-                    <div class="flex items-center gap-3 mt-auto">
-                        <div class="w-10 h-10 rounded-full overflow-hidden border border-black/10 shadow-sm">
-                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=100" alt="Glodie Lukose" class="w-full h-full object-cover">
+                    <!-- Card 2 -->
+                    <div class="w-[400px] bg-[#F9F7F2] rounded-3xl border border-black/5 p-8 flex flex-col whitespace-normal">
+                        <div class="flex gap-1 mb-6">
+                            <i data-lucide="Star" class="w-4 h-4 fill-[#8A9A5B] stroke-[#8A9A5B]"></i>
+                            <i data-lucide="Star" class="w-4 h-4 fill-[#8A9A5B] stroke-[#8A9A5B]"></i>
+                            <i data-lucide="Star" class="w-4 h-4 fill-[#8A9A5B] stroke-[#8A9A5B]"></i>
+                            <i data-lucide="Star" class="w-4 h-4 fill-[#8A9A5B] stroke-[#8A9A5B]"></i>
+                            <i data-lucide="Star" class="w-4 h-4 fill-black/10 stroke-transparent"></i>
                         </div>
-                        <div>
-                            <div class="text-sm font-semibold">Glodie Lukose</div>
-                            <div class="text-[10px] uppercase tracking-widest opacity-50">Designer</div>
+                        <p class="text-gray-600 font-light leading-relaxed mb-8">
+                            "A terapia transformou minha forma de lidar com desafios profissionais. A flexibilidade do atendimento online facilitou muito minha rotina."
+                        </p>
+                        <div class="flex items-center gap-3 mt-auto">
+                            <div class="w-10 h-10 rounded-full overflow-hidden border border-black/10 shadow-sm">
+                                <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=100" alt="Théo Balick" class="w-full h-full object-cover">
+                            </div>
+                            <div>
+                                <div class="text-sm font-semibold">Théo Balick</div>
+                                <div class="text-[10px] uppercase tracking-widest opacity-50">Desenvolvedor</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 3 -->
+                    <div class="w-[400px] bg-[#F9F7F2] rounded-3xl border border-black/5 p-8 flex flex-col whitespace-normal">
+                        <div class="flex gap-1 mb-6">
+                            <i data-lucide="Star" class="w-4 h-4 fill-[#8A9A5B] stroke-[#8A9A5B]"></i>
+                            <i data-lucide="Star" class="w-4 h-4 fill-[#8A9A5B] stroke-[#8A9A5B]"></i>
+                            <i data-lucide="Star" class="w-4 h-4 fill-[#8A9A5B] stroke-[#8A9A5B]"></i>
+                            <i data-lucide="Star" class="w-4 h-4 fill-[#8A9A5B] stroke-[#8A9A5B]"></i>
+                            <i data-lucide="Star" class="w-4 h-4 fill-[#8A9A5B] stroke-[#8A9A5B]"></i>
+                        </div>
+                        <p class="text-gray-600 font-light leading-relaxed mb-8">
+                            "A profundidade e o cuidado em cada sessão superaram todas as minhas expectativas. Recomendo para quem busca autoconhecimento real."
+                        </p>
+                        <div class="flex items-center gap-3 mt-auto">
+                            <div class="w-10 h-10 rounded-full overflow-hidden border border-black/10 shadow-sm">
+                                <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=100" alt="Glodie Lukose" class="w-full h-full object-cover">
+                            </div>
+                            <div>
+                                <div class="text-sm font-semibold">Glodie Lukose</div>
+                                <div class="text-[10px] uppercase tracking-widest opacity-50">Designer</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Card 4 -->
+                    <div class="w-[400px] bg-[#F9F7F2] rounded-3xl border border-black/5 p-8 flex flex-col whitespace-normal">
+                        <div class="flex gap-1 mb-6">
+                            <i data-lucide="Star" class="w-4 h-4 fill-[#8A9A5B] stroke-[#8A9A5B]"></i>
+                            <i data-lucide="Star" class="w-4 h-4 fill-[#8A9A5B] stroke-[#8A9A5B]"></i>
+                            <i data-lucide="Star" class="w-4 h-4 fill-[#8A9A5B] stroke-[#8A9A5B]"></i>
+                            <i data-lucide="Star" class="w-4 h-4 fill-[#8A9A5B] stroke-[#8A9A5B]"></i>
+                            <i data-lucide="Star" class="w-4 h-4 fill-[#8A9A5B] stroke-[#8A9A5B]"></i>
+                        </div>
+                        <p class="text-gray-600 font-light leading-relaxed mb-8">
+                            "O acolhimento foi fundamental para que eu pudesse enfrentar meus medos mais profundos com serenidade e ética. Sou muito grata."
+                        </p>
+                        <div class="flex items-center gap-3 mt-auto">
+                            <div class="w-10 h-10 rounded-full overflow-hidden border border-black/10 shadow-sm">
+                                <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=100" alt="Juliana Silva" class="w-full h-full object-cover">
+                            </div>
+                            <div>
+                                <div class="text-sm font-semibold">Juliana Silva</div>
+                                <div class="text-[10px] uppercase tracking-widest opacity-50">Advogada</div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -354,7 +479,7 @@
                 <div class="group bg-white rounded-2xl border border-black/5 overflow-hidden reveal">
                     <button class="w-full p-8 text-left flex justify-between items-center group-hover:bg-gray-50 transition-colors" onclick="this.nextElementSibling.classList.toggle('hidden')">
                         <span class="font-medium text-lg">Como funciona a primeira sessão?</span>
-                        <i data-lucide="chevron-down" class="w-5 h-5 opacity-30 group-hover:opacity-100 transition-opacity"></i>
+                        <i data-lucide="ChevronDown" class="w-5 h-5 opacity-30 group-hover:opacity-100 transition-opacity"></i>
                     </button>
                     <div class="px-8 pb-8 text-gray-500 font-light leading-relaxed hidden">
                         A primeira sessão é um momento de acolhimento e escuta mútua. Nela, buscamos entender sua queixa principal, sua história de vida e alinhamos como o processo terapêutico pode te ajudar da melhor forma.
@@ -365,7 +490,7 @@
                 <div class="group bg-white rounded-2xl border border-black/5 overflow-hidden reveal" style="transition-delay: 100ms;">
                     <button class="w-full p-8 text-left flex justify-between items-center group-hover:bg-gray-50 transition-colors" onclick="this.nextElementSibling.classList.toggle('hidden')">
                         <span class="font-medium text-lg">Qual a duração e frequência das sessões?</span>
-                        <i data-lucide="chevron-down" class="w-5 h-5 opacity-30 group-hover:opacity-100 transition-opacity"></i>
+                        <i data-lucide="ChevronDown" class="w-5 h-5 opacity-30 group-hover:opacity-100 transition-opacity"></i>
                     </button>
                     <div class="px-8 pb-8 text-gray-500 font-light leading-relaxed hidden">
                         As sessões têm duração média de 50 minutos e ocorrem semanalmente. A regularidade é fundamental para que o processo terapêutico tenha a profundidade necessária para as transformações.
@@ -376,7 +501,7 @@
                 <div class="group bg-white rounded-2xl border border-black/5 overflow-hidden reveal" style="transition-delay: 200ms;">
                     <button class="w-full p-8 text-left flex justify-between items-center group-hover:bg-gray-50 transition-colors" onclick="this.nextElementSibling.classList.toggle('hidden')">
                         <span class="font-medium text-lg">O atendimento online é eficaz?</span>
-                        <i data-lucide="chevron-down" class="w-5 h-5 opacity-30 group-hover:opacity-100 transition-opacity"></i>
+                        <i data-lucide="ChevronDown" class="w-5 h-5 opacity-30 group-hover:opacity-100 transition-opacity"></i>
                     </button>
                     <div class="px-8 pb-8 text-gray-500 font-light leading-relaxed hidden">
                         Sim. Estudos mostram que a eficácia é equivalente ao presencial. O atendimento online oferece o benefício da flexibilidade de horários e a possibilidade de realizar a terapia no conforto e privacidade da sua casa.
@@ -387,7 +512,7 @@
                 <div class="group bg-white rounded-2xl border border-black/5 overflow-hidden reveal" style="transition-delay: 300ms;">
                     <button class="w-full p-8 text-left flex justify-between items-center group-hover:bg-gray-50 transition-colors" onclick="this.nextElementSibling.classList.toggle('hidden')">
                         <span class="font-medium text-lg">Atende por convênio médico?</span>
-                        <i data-lucide="chevron-down" class="w-5 h-5 opacity-30 group-hover:opacity-100 transition-opacity"></i>
+                        <i data-lucide="ChevronDown" class="w-5 h-5 opacity-30 group-hover:opacity-100 transition-opacity"></i>
                     </button>
                     <div class="px-8 pb-8 text-gray-500 font-light leading-relaxed hidden">
                         Trabalho exclusivamente com atendimentos particulares, mas forneço recibos para que você possa solicitar o reembolso junto ao seu plano de saúde, caso ele ofereça essa modalidade.
@@ -413,15 +538,15 @@
                     <div class="flex gap-3">
                         <a href="https://instagram.com" target="_blank"
                             class="w-11 h-11 rounded-lg border border-white/10 flex items-center justify-center hover:bg-white hover:text-[#2C2C2C] transition-all">
-                            <i data-lucide="instagram" class="w-5 h-5"></i>
+                            <i data-lucide="Instagram" class="w-5 h-5"></i>
                         </a>
                         <a href="https://wa.me/5511999999999" target="_blank"
                             class="w-11 h-11 rounded-lg border border-white/10 flex items-center justify-center hover:bg-white hover:text-[#2C2C2C] transition-all">
-                            <i data-lucide="message-circle" class="w-5 h-5"></i>
+                            <i data-lucide="MessageCircle" class="w-5 h-5"></i>
                         </a>
                         <a href="#"
                             class="w-11 h-11 rounded-lg border border-white/10 flex items-center justify-center hover:bg-white hover:text-[#2C2C2C] transition-all">
-                            <i data-lucide="linkedin" class="w-5 h-5"></i>
+                            <i data-lucide="Linkedin" class="w-5 h-5"></i>
                         </a>
                     </div>
                 </div>
