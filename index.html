@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dra. Helena Martins | Psicologia Clínica Premium</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        :root {
+            --bg-premium: #F9F7F2;
+            --text-main: #2C2C2C;
+            --sage: #8A9A5B;
+            --soft-blue: #A3B5C3;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-premium);
+            color: var(--text-main);
+            overflow-x: hidden;
+        }
+
+        h1,
+        h2,
+        h3,
+        .font-serif {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .grain-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 9999;
+            opacity: 0.04;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 1.4s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .glass {
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        @keyframes pulse-soft {
+            0% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(138, 154, 91, 0.4);
+            }
+
+            70% {
+                transform: scale(1.05);
+                box-shadow: 0 0 0 15px rgba(138, 154, 91, 0);
+            }
+
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 0 0 rgba(138, 154, 91, 0);
+            }
+        }
+
+        .whatsapp-pulse {
+            animation: pulse-soft 3s infinite;
+        }
+
+        .marquee-content {
+            display: flex;
+            gap: 2rem;
+            animation: scroll 60s linear infinite;
+        }
+
+        @keyframes scroll {
+            from {
+                transform: translateX(0);
+            }
+
+            to {
+                transform: translateX(-100%);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="grain-overlay"></div>
+
+    <nav
+        class="fixed top-0 w-full z-50 transition-all duration-500 py-6 px-8 md:px-16 flex justify-between items-center glass">
+        <div class="text-xl font-serif tracking-widest uppercase">Helena Martins</div>
+        <div class="hidden md:flex gap-8 text-sm font-light tracking-wide uppercase">
+            <a href="#sobre" class="hover:opacity-50 transition">Sobre</a>
+            <a href="#especialidades" class="hover:opacity-50 transition">Especialidades</a>
+            <a href="#processo" class="hover:opacity-50 transition">Processo</a>
+            <a href="#faq" class="hover:opacity-50 transition">FAQ</a>
+            <a href="#contato" class="hover:opacity-50 transition">Contato</a>
+        </div>
+        <a href="#"
+            class="bg-[#2C2C2C] text-white px-6 py-3 rounded-full text-xs uppercase tracking-widest font-medium hover:scale-105 transition-transform">
+            Agendar Conversa
+        </a>
+    </nav>
+
+    <section class="min-h-screen flex flex-col justify-center px-8 md:px-16 pt-20 relative bg-[#F9F7F2]">
+        <div class="max-w-4xl mx-auto text-center md:text-left md:mx-0">
+            <span class="inline-block mb-6 text-sm tracking-[0.4em] uppercase opacity-60 reveal">Psicologia Clínica &
+                Bem-estar</span>
+            <h1 class="text-5xl md:text-7xl leading-[1.15] font-serif mb-8 reveal max-w-[15ch]">
+                Reencontre seu <span class="italic">equilíbrio</span> em um espaço seguro.
+            </h1>
+            <p class="text-lg md:text-xl font-light text-gray-600 mb-12 max-w-xl reveal"
+                style="transition-delay: 200ms;">
+                Uma abordagem humanizada para navegar pelas emoções, promovendo saúde mental com ética e profundidade.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-6 items-center md:items-start reveal"
+                style="transition-delay: 400ms;">
+                <div>
+                    <a href="#"
+                        class="inline-block bg-[#8A9A5B] text-white px-10 py-5 rounded-full text-sm uppercase tracking-widest font-medium hover:shadow-xl transition-all">
+                        Iniciar Jornada
+                    </a>
+                    <p class="text-[10px] mt-3 uppercase tracking-widest opacity-40 text-center">Agendamento rápido via
+                        WhatsApp</p>
+                </div>
+                <div
+                    class="flex items-center gap-3 px-6 py-4 rounded-2xl border border-black/5 bg-white/30 backdrop-blur-sm">
+                    <div class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                    <span class="text-[11px] uppercase tracking-widest opacity-70">CRP Ativo: 06/123456</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Elementos Abstratos (Luxo Minimalista) -->
+        <div
+            class="absolute right-[5%] bottom-[15%] w-64 h-64 bg-[#A3B5C3] rounded-full mix-blend-multiply filter blur-[100px] opacity-20 hidden lg:block">
+        </div>
+    </section>
+
+    <section id="sobre" class="py-32 px-8 md:px-24 bg-white">
+        <div class="grid md:grid-cols-2 gap-20 items-center">
+            <div class="relative reveal">
+                <div class="aspect-[4/5] overflow-hidden rounded-3xl shadow-2xl">
+                    <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=800"
+                        alt="Dra Helena Martins"
+                        class="w-full h-full object-cover grayscale hover:grayscale-0 transition duration-1000">
+                </div>
+            </div>
+            <div class="reveal" style="transition-delay: 300ms;">
+                <h2 class="text-4xl font-serif mb-8">Dra. Helena Martins</h2>
+                <div class="space-y-6 text-gray-600 font-light leading-relaxed text-lg">
+                    <p>Com formação sólida e anos de dedicação à clínica, meu propósito é oferecer uma escuta que acolhe
+                        e transforma.</p>
+                    <p>Acredito que a psicoterapia é um investimento na sua liberdade emocional e na construção de uma
+                        vida com mais significado.</p>
+                    <div class="pt-6 grid grid-cols-2 gap-4">
+                        <div class="p-4 rounded-xl bg-[#F9F7F2] border border-black/5">
+                            <h4 class="text-xs uppercase tracking-widest font-bold mb-1">Mestrado</h4>
+                            <p class="text-sm opacity-70">Psicologia USP</p>
+                        </div>
+                        <div class="p-4 rounded-xl bg-[#F9F7F2] border border-black/5">
+                            <h4 class="text-xs uppercase tracking-widest font-bold mb-1">Experiência</h4>
+                            <p class="text-sm opacity-70">+10 anos clínica</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="especialidades" class="py-32 px-8 md:px-16">
+        <div class="text-center mb-20 reveal">
+            <h2 class="text-4xl font-serif mb-4">Áreas de Atuação</h2>
+            <div class="w-20 h-[1px] bg-[#8A9A5B] mx-auto opacity-50"></div>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div
+                class="group p-12 rounded-[2.5rem] bg-white border border-black/5 hover:bg-[#2C2C2C] transition-all duration-700 reveal">
+                <i data-lucide="sun" class="w-8 h-8 mb-8 text-[#8A9A5B]"></i>
+                <h3 class="text-2xl font-serif mb-4 group-hover:text-white transition-colors">Ansiedade</h3>
+                <p class="text-gray-500 group-hover:text-gray-400 transition-colors font-light">Estratégias para lidar
+                    com a pressa do mundo e reencontrar o seu tempo.</p>
+            </div>
+            <div class="group p-12 rounded-[2.5rem] bg-white border border-black/5 hover:bg-[#2C2C2C] transition-all duration-700 reveal"
+                style="transition-delay: 200ms;">
+                <i data-lucide="shield-check" class="w-8 h-8 mb-8 text-[#8A9A5B]"></i>
+                <h3 class="text-2xl font-serif mb-4 group-hover:text-white transition-colors">Autoestima</h3>
+                <p class="text-gray-500 group-hover:text-gray-400 transition-colors font-light">Fortalecimento do eu e
+                    desconstrução de padrões limitantes de autocrítica.</p>
+            </div>
+            <div class="group p-12 rounded-[2.5rem] bg-white border border-black/5 hover:bg-[#2C2C2C] transition-all duration-700 reveal"
+                style="transition-delay: 400ms;">
+                <i data-lucide="users" class="w-8 h-8 mb-8 text-[#8A9A5B]"></i>
+                <h3 class="text-2xl font-serif mb-4 group-hover:text-white transition-colors">Relacionamentos</h3>
+                <p class="text-gray-500 group-hover:text-gray-400 transition-colors font-light">Desenvolvimento de
+                    vínculos saudáveis e comunicação assertiva.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="processo" class="py-32 px-8 md:px-24 bg-[#F2F0EA]">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-20 reveal">
+                <span class="text-[10px] uppercase tracking-[0.4em] opacity-50 mb-4 block">Metodologia</span>
+                <h2 class="text-4xl font-serif">O Caminho para o Bem-Estar</h2>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-12 relative">
+                <!-- Linha conectora decorativa (Desktop) -->
+                <div class="hidden md:block absolute top-1/4 left-0 w-full h-[1px] bg-black/5 -z-0"></div>
+
+                <div class="relative z-10 group reveal">
+                    <div
+                        class="w-12 h-12 rounded-full bg-white border border-black/5 flex items-center justify-center mb-8 group-hover:bg-[#8A9A5B] group-hover:text-white transition-all duration-500">
+                        <span class="font-serif">01</span>
+                    </div>
+                    <h3 class="text-xl font-serif mb-4">Acolhimento</h3>
+                    <p class="text-gray-500 font-light leading-relaxed">Primeiro contato via WhatsApp ou e-mail para
+                        alinhar expectativas e horários.</p>
+                </div>
+
+                <div class="relative z-10 group reveal" style="transition-delay: 200ms;">
+                    <div
+                        class="w-12 h-12 rounded-full bg-white border border-black/5 flex items-center justify-center mb-8 group-hover:bg-[#8A9A5B] group-hover:text-white transition-all duration-500">
+                        <span class="font-serif">02</span>
+                    </div>
+                    <h3 class="text-xl font-serif mb-4">Avaliação Inicial</h3>
+                    <p class="text-gray-500 font-light leading-relaxed">Uma sessão dedicada a entender sua história e
+                        traçar os objetivos do acompanhamento.</p>
+                </div>
+
+                <div class="relative z-10 group reveal" style="transition-delay: 400ms;">
+                    <div
+                        class="w-12 h-12 rounded-full bg-white border border-black/5 flex items-center justify-center mb-8 group-hover:bg-[#8A9A5B] group-hover:text-white transition-all duration-500">
+                        <span class="font-serif">03</span>
+                    </div>
+                    <h3 class="text-xl font-serif mb-4">Jornada Terapêutica</h3>
+                    <p class="text-gray-500 font-light leading-relaxed">Encontros semanais focados no seu
+                        autoconhecimento e evolução emocional constante.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="depoimentos" class="py-32 bg-white">
+        <div class="max-w-6xl mx-auto px-8 md:px-16">
+            <div class="text-center mb-20 reveal">
+                <span class="text-[10px] uppercase tracking-[0.4em] opacity-50 mb-4 block">Testemunhos</span>
+                <h2 class="text-4xl font-serif">Relatos de Jornada</h2>
+            </div>
+
+            <!-- Grid de Depoimentos (Inspirado no Shadcn/Tailark) -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Card 1 -->
+                <div class="bg-[#F9F7F2] rounded-3xl border border-black/5 p-8 transition-all hover:shadow-xl reveal">
+                    <div class="flex gap-1 mb-6">
+                        <i data-lucide="star" class="w-4 h-4 fill-[#8A9A5B] stroke-[#8A9A5B]"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-[#8A9A5B] stroke-[#8A9A5B]"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-[#8A9A5B] stroke-[#8A9A5B]"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-[#8A9A5B] stroke-[#8A9A5B]"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-[#8A9A5B] stroke-[#8A9A5B]"></i>
+                    </div>
+                    <p class="text-gray-600 font-light leading-relaxed mb-8">
+                        "Utilizar o acompanhamento da Dra. Helena foi como desbloquear um novo nível de clareza mental. A fusão entre empatia e técnica é impecável."
+                    </p>
+                    <div class="flex items-center gap-3 mt-auto">
+                        <div class="w-10 h-10 rounded-full overflow-hidden border border-black/10 shadow-sm">
+                            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=100" alt="Méschac Irung" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <div class="text-sm font-semibold">Méschac Irung</div>
+                            <div class="text-[10px] uppercase tracking-widest opacity-50">Empresário</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-[#F9F7F2] rounded-3xl border border-black/5 p-8 transition-all hover:shadow-xl reveal" style="transition-delay: 200ms;">
+                    <div class="flex gap-1 mb-6">
+                        <i data-lucide="star" class="w-4 h-4 fill-[#8A9A5B] stroke-[#8A9A5B]"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-[#8A9A5B] stroke-[#8A9A5B]"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-[#8A9A5B] stroke-[#8A9A5B]"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-[#8A9A5B] stroke-[#8A9A5B]"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-black/10 stroke-transparent"></i>
+                    </div>
+                    <p class="text-gray-600 font-light leading-relaxed mb-8">
+                        "A terapia transformou minha forma de lidar com desafios profissionais. A flexibilidade do atendimento online facilitou muito minha rotina."
+                    </p>
+                    <div class="flex items-center gap-3 mt-auto">
+                        <div class="w-10 h-10 rounded-full overflow-hidden border border-black/10 shadow-sm">
+                            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&q=80&w=100" alt="Théo Balick" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <div class="text-sm font-semibold">Théo Balick</div>
+                            <div class="text-[10px] uppercase tracking-widest opacity-50">Desenvolvedor</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-[#F9F7F2] rounded-3xl border border-black/5 p-8 transition-all hover:shadow-xl reveal" style="transition-delay: 400ms;">
+                    <div class="flex gap-1 mb-6">
+                        <i data-lucide="star" class="w-4 h-4 fill-[#8A9A5B] stroke-[#8A9A5B]"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-[#8A9A5B] stroke-[#8A9A5B]"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-[#8A9A5B] stroke-[#8A9A5B]"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-[#8A9A5B] stroke-[#8A9A5B]"></i>
+                        <i data-lucide="star" class="w-4 h-4 fill-[#8A9A5B] stroke-[#8A9A5B]"></i>
+                    </div>
+                    <p class="text-gray-600 font-light leading-relaxed mb-8">
+                        "A profundidade e o cuidado em cada sessão superaram todas as minhas expectativas. Recomendo para quem busca autoconhecimento real."
+                    </p>
+                    <div class="flex items-center gap-3 mt-auto">
+                        <div class="w-10 h-10 rounded-full overflow-hidden border border-black/10 shadow-sm">
+                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=100" alt="Glodie Lukose" class="w-full h-full object-cover">
+                        </div>
+                        <div>
+                            <div class="text-sm font-semibold">Glodie Lukose</div>
+                            <div class="text-[10px] uppercase tracking-widest opacity-50">Designer</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="faq" class="py-32 px-8 md:px-24 bg-[#F9F7F2]">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-16 reveal">
+                <span class="text-[10px] uppercase tracking-[0.4em] opacity-50 mb-4 block">Dúvidas Frequentes</span>
+                <h2 class="text-4xl font-serif">Perguntas Comuns</h2>
+            </div>
+
+            <div class="space-y-4">
+                <!-- Item 1 -->
+                <div class="group bg-white rounded-2xl border border-black/5 overflow-hidden reveal">
+                    <button class="w-full p-8 text-left flex justify-between items-center group-hover:bg-gray-50 transition-colors" onclick="this.nextElementSibling.classList.toggle('hidden')">
+                        <span class="font-medium text-lg">Como funciona a primeira sessão?</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 opacity-30 group-hover:opacity-100 transition-opacity"></i>
+                    </button>
+                    <div class="px-8 pb-8 text-gray-500 font-light leading-relaxed hidden">
+                        A primeira sessão é um momento de acolhimento e escuta mútua. Nela, buscamos entender sua queixa principal, sua história de vida e alinhamos como o processo terapêutico pode te ajudar da melhor forma.
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="group bg-white rounded-2xl border border-black/5 overflow-hidden reveal" style="transition-delay: 100ms;">
+                    <button class="w-full p-8 text-left flex justify-between items-center group-hover:bg-gray-50 transition-colors" onclick="this.nextElementSibling.classList.toggle('hidden')">
+                        <span class="font-medium text-lg">Qual a duração e frequência das sessões?</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 opacity-30 group-hover:opacity-100 transition-opacity"></i>
+                    </button>
+                    <div class="px-8 pb-8 text-gray-500 font-light leading-relaxed hidden">
+                        As sessões têm duração média de 50 minutos e ocorrem semanalmente. A regularidade é fundamental para que o processo terapêutico tenha a profundidade necessária para as transformações.
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="group bg-white rounded-2xl border border-black/5 overflow-hidden reveal" style="transition-delay: 200ms;">
+                    <button class="w-full p-8 text-left flex justify-between items-center group-hover:bg-gray-50 transition-colors" onclick="this.nextElementSibling.classList.toggle('hidden')">
+                        <span class="font-medium text-lg">O atendimento online é eficaz?</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 opacity-30 group-hover:opacity-100 transition-opacity"></i>
+                    </button>
+                    <div class="px-8 pb-8 text-gray-500 font-light leading-relaxed hidden">
+                        Sim. Estudos mostram que a eficácia é equivalente ao presencial. O atendimento online oferece o benefício da flexibilidade de horários e a possibilidade de realizar a terapia no conforto e privacidade da sua casa.
+                    </div>
+                </div>
+
+                <!-- Item 4 -->
+                <div class="group bg-white rounded-2xl border border-black/5 overflow-hidden reveal" style="transition-delay: 300ms;">
+                    <button class="w-full p-8 text-left flex justify-between items-center group-hover:bg-gray-50 transition-colors" onclick="this.nextElementSibling.classList.toggle('hidden')">
+                        <span class="font-medium text-lg">Atende por convênio médico?</span>
+                        <i data-lucide="chevron-down" class="w-5 h-5 opacity-30 group-hover:opacity-100 transition-opacity"></i>
+                    </button>
+                    <div class="px-8 pb-8 text-gray-500 font-light leading-relaxed hidden">
+                        Trabalho exclusivamente com atendimentos particulares, mas forneço recibos para que você possa solicitar o reembolso junto ao seu plano de saúde, caso ele ofereça essa modalidade.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contato" class="bg-[#2C2C2C] text-white pt-24 pb-12 px-8 md:px-16 rounded-t-[3rem] font-light relative">
+        <div class="max-w-7-xl mx-auto">
+            <!-- Grid de 3 Colunas como no print -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-16 mb-16">
+
+                <!-- Coluna 1: Logo e Descrição -->
+                <div class="space-y-8">
+                    <h2 class="text-3xl font-serif tracking-widest uppercase">Helena Martins</h2>
+                    <p class="text-gray-400 text-sm leading-relaxed max-w-sm">
+                        Comprometida com a ética e a excelência no cuidado emocional. Dra. Helena Martins é referência
+                        em psicoterapia humanizada e soluções para o bem-estar integral.
+                    </p>
+                    <!-- Ícones Sociais em Caixas (como no print) -->
+                    <div class="flex gap-3">
+                        <a href="https://instagram.com" target="_blank"
+                            class="w-11 h-11 rounded-lg border border-white/10 flex items-center justify-center hover:bg-white hover:text-[#2C2C2C] transition-all">
+                            <i data-lucide="instagram" class="w-5 h-5"></i>
+                        </a>
+                        <a href="https://wa.me/5511999999999" target="_blank"
+                            class="w-11 h-11 rounded-lg border border-white/10 flex items-center justify-center hover:bg-white hover:text-[#2C2C2C] transition-all">
+                            <i data-lucide="message-circle" class="w-5 h-5"></i>
+                        </a>
+                        <a href="#"
+                            class="w-11 h-11 rounded-lg border border-white/10 flex items-center justify-center hover:bg-white hover:text-[#2C2C2C] transition-all">
+                            <i data-lucide="linkedin" class="w-5 h-5"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Coluna 2: Institucional -->
+                <div class="space-y-8">
+                    <h3 class="text-xs uppercase tracking-[0.3em] font-medium opacity-50">Institucional</h3>
+                    <ul class="space-y-4 text-sm text-gray-300">
+                        <li><a href="#" class="hover:text-[#8A9A5B] transition">Sobre a Profissional</a></li>
+                        <li><a href="#" class="hover:text-[#8A9A5B] transition">Termos de Uso</a></li>
+                        <li><a href="#" class="hover:text-[#8A9A5B] transition">Privacidade</a></li>
+                        <li><a href="#" class="hover:text-[#8A9A5B] transition">Código de Ética CRP</a></li>
+                        <li><a href="#" class="hover:text-[#8A9A5B] transition">Trabalhe Conosco</a></li>
+                    </ul>
+                </div>
+
+                <!-- Coluna 3: Contato (Estrutura de ícones do print) -->
+                <div class="space-y-8">
+                    <h3 class="text-xs uppercase tracking-[0.3em] font-medium opacity-50">Contato</h3>
+                    <ul class="space-y-5 text-sm text-gray-300">
+                        <li class="flex items-center gap-4">
+                            <i data-lucide="phone" class="w-5 h-5 text-[#8A9A5B]"></i>
+                            <span>(11) 99999-9999</span>
+                        </li>
+                        <li class="flex items-center gap-4">
+                            <i data-lucide="map-pin" class="w-5 h-5 text-[#8A9A5B]"></i>
+                            <span>São Paulo, SP & Online</span>
+                        </li>
+                        <li class="flex items-center gap-4">
+                            <i data-lucide="clock" class="w-5 h-5 text-[#8A9A5B]"></i>
+                            <span>Seg - Sex, 08h - 20h</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Linha Inferior (Barra de Copyright como no print) -->
+            <div class="border-t border-white/5 pt-12 flex flex-col items-center">
+                <p class="text-[10px] uppercase tracking-[0.3em] opacity-40 mb-3 text-center">
+                    © 2024 Helena Martins. Todos os direitos reservados. CRP 06/123456
+                </p>
+                <p class="text-[9px] uppercase tracking-[0.4em] font-bold text-[#8A9A5B]">
+                    DESIGNED FOR EXCELLENCE
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="fixed bottom-8 right-8 z-[100] flex flex-col gap-4">
+        <!-- Botão WhatsApp (com pulsação) -->
+        <button
+            class="bg-[#8A9A5B] text-white w-14 h-14 rounded-xl shadow-2xl flex items-center justify-center whatsapp-pulse hover:scale-110 transition-transform group relative">
+            <i data-lucide="message-circle" class="w-6 h-6"></i>
+            <span
+                class="absolute right-full mr-4 bg-white text-[#2C2C2C] px-4 py-2 rounded-lg text-[10px] uppercase tracking-widest font-bold opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap shadow-2xl">
+                Agendar Agora
+            </span>
+        </button>
+    </div>
+
+    <script>
+        // Inicializar ícones
+        lucide.createIcons();
+
+        // Reveal no Scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('active');
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+        // Scroll Suave
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
